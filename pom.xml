@@ -6,7 +6,11 @@
 
     <groupId>cn.xuguowen</groupId>
     <artifactId>xgw-juc-java</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>xgw-juc-java-01</module>
+    </modules>
 
     <name>xgw-juc-java</name>
     <description>study java juc</description>
