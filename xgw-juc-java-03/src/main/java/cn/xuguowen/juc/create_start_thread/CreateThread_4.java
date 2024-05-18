@@ -2,6 +2,7 @@ package cn.xuguowen.juc.create_start_thread;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -41,6 +42,9 @@ public class CreateThread_4 {
     private static void test1() throws InterruptedException, ExecutionException {
         // 与Runnable接口不同，Callable接口允许线程执行一个任务并返回一个结果，而不像Runnable只能执行一个任务而不能返回结果。
         Callable callable = () -> {
+            if (true) {
+                throw new IOException();
+            }
             // 线程要执行的任务，并返回一个结果
             return "任务执行完成";
         };
