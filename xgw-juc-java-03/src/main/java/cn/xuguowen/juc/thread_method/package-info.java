@@ -4,6 +4,12 @@
  * Description:线程的一些常用方法
  *  1.start() vs run()
  *  2.sleep()
+ *  3.yield()
+ *  4.set/getPriority()
+ *  5.join()
+ *  6.interrupt()
+ *  7.isInterrupted()
+ *  8.interrupted()
  * @Author 徐国文
  * @Create 2024/5/18 20:32
  * @Version 1.0
