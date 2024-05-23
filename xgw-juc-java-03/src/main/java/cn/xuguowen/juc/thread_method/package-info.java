@@ -10,6 +10,10 @@
  *  6.interrupt()
  *  7.isInterrupted()
  *  8.interrupted()
+ *  9.LockSupport.park()
+ *  10.shop()
+ *  11.suspent()
+ *  12.resume()
  * @Author 徐国文
  * @Create 2024/5/18 20:32
  * @Version 1.0
