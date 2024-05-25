@@ -12,6 +12,7 @@
         <module>xgw-juc-java-01</module>
         <module>xgw-juc-java-02</module>
         <module>xgw-juc-java-03</module>
+        <module>xgw-juc-java-04</module>
     </modules>
 
     <name>xgw-juc-java</name>
