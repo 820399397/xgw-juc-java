@@ -45,6 +45,13 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.8</version>
         </dependency>
+
+        <!-- 输出java对象markword的二进制数据 -->
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.10</version>
+        </dependency>
     </dependencies>
 
 </project>
