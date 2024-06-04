@@ -78,5 +78,17 @@ synchronized 是 Java 中的一个很重要的关键字，主要用来加锁。s
 When the last contending thread releases a fat lock, the lock normally remains fat. Taking a fat lock, even without contention, is more expensive than taking a fat lock (but less expensive than converting a thin lock to a fat lock). If JRockit believes that the lock would benefit from being thin (basically, if the contention was pure "bad luck" and the lock normally is uncontended), it might "deflate" it to a thin lock again.
 翻译一下就是:当最后一个争用线程释放重量级锁时，锁通常仍然保持为重量级。即使没有争用，获取重量级锁的代价也比获取轻量级锁（thin lock）更高。如果JRockit认为锁会从变轻中受益，它可能会再次将其“压缩”为轻量级锁。
 
+7.sleep和wait的区别
+    - sleep()方法可以在任何地方使用；而wait()方法则只能在同步方法或同步块中使用（只能获取锁之后使用，否者会出现异常）。
+    - wait 方法会释放对象锁，但 sleep 方法不会。
+    - wait的线程会进入到WAITING状态，直到被唤醒；sleep的线程会进入到TIMED_WAITING状态，等到指定时间之后会再尝试获取CPU时间片，不会释放锁资源。
+    - 因为Java锁的目标是对象，而wait需要释放锁，所以针对的目标都是对象，所以把他定义在Object类中。 而sleep()不需要释放锁，所以他针对的目标是线程，所以定义在Thread类中。
 
+8.notify和notifyAll区别
+    - 当一个线程进入wait之后，就必须等其他线程notify()/notifyAll()，才会从waitSet等待队列中被移出。
+    - 使用notifyAll，可以唤醒所有处于wait状态的线程，使其重新进入锁的争夺队列中，而notify只能唤醒一个。
+    - 但是唤醒的这些线程只是进入争夺队列，并不表示立即就可以获得CPU开始执行，因为wait方法被调用的时候，线程已经释放了对象锁。
+    - 所以，被notify()/notifyAll()唤醒的线程，只是表示他们可以竞争锁了，竞争到锁之后才有机会被CPU调度。
+    - 那么notifyAll虽然可以把所有线程都唤醒，让他们都可以竞争锁，但是最终也只有一个可以获得锁并执行。
+    - notify和notifyAll因为也是操作对象的，所以把他们定义在Object类中。
 
