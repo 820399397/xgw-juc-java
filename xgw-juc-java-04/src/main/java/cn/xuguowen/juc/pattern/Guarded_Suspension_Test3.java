@@ -1,7 +1,6 @@
 package cn.xuguowen.juc.pattern;
 
 import cn.xuguowen.juc.utils.Downloader;
-import cn.xuguowen.juc.utils.Sleeper;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
