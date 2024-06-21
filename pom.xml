@@ -13,7 +13,17 @@
         <module>xgw-juc-java-02</module>
         <module>xgw-juc-java-03</module>
         <module>xgw-juc-java-04</module>
+        <module>xgw-juc-java-05</module>
+        <module>case_monitor</module>
     </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
 
     <name>xgw-juc-java</name>
     <description>study java juc</description>
