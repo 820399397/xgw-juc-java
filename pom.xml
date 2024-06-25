@@ -15,6 +15,7 @@
         <module>xgw-juc-java-04</module>
         <module>xgw-juc-java-05</module>
         <module>case_monitor</module>
+        <module>jcstress_ordering</module>
     </modules>
 
     <parent>
