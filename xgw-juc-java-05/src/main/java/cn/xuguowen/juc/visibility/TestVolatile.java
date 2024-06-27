@@ -3,11 +3,6 @@ package cn.xuguowen.juc.visibility;
 import cn.xuguowen.juc.utils.Sleeper;
 import lombok.extern.slf4j.Slf4j;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.TextStyle;
-import java.util.Locale;
-
 /**
  * ClassName: TestVoliate
  * Package: cn.xuguowen.visibility
@@ -30,33 +25,8 @@ public class TestVolatile {
 
         // test3();
 
-        // test4();
+        test4();
 
-
-        String inputDateTime = "2024-06-18 15:30:00";  // 输入日期时间字符串
-        String formattedDateTime = convertDateTime(inputDateTime);
-        System.out.println(formattedDateTime);  // 输出：2024-06-18 15:30:00;
-
-
-    }
-
-    public static String convertDateTime(String inputDateTime) {
-        // 定义输入和输出的日期时间格式
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("HH:mm");
-
-        // 解析输入的日期时间字符串
-        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime, inputFormatter);
-
-        // 获取星期几并格式化为中文（或其他语言）
-        String dayOfWeek = dateTime.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.CHINA);
-
-        // 格式化时间部分
-        String startTime = dateTime.format(outputFormatter);
-        String endTime = dateTime.plusHours(1).format(outputFormatter); // 假设结束时间是开始时间加一小时
-
-        // 生成最终的格式化字符串
-        return String.format("%s %s-%s", dayOfWeek, startTime, endTime);
     }
 
     static boolean test4Run = true;
