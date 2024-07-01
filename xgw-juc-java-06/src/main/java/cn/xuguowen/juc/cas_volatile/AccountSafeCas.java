@@ -55,7 +55,7 @@ public class AccountSafeCas implements Account{
 
     @Override
     public void withdraw(Integer amount) {
-        while (true) {
+        /*while (true) {
             //  获取当前余额
             int prev = balance.get();
             //  计算扣减后的余额
@@ -66,9 +66,16 @@ public class AccountSafeCas implements Account{
             if (balance.compareAndSet(prev, next)) {
                 break;
             }
-        }
+        }*/
 
         // 可以简化为如下写法：
         // balance.addAndGet(-1 * amount);
+        // balance.getAndAdd(-1 * amount);
+
+        // updateAndGet 方法允许传入一个 UnaryOperator，对当前值进行操作并返回更新后的值。
+        // balance.updateAndGet(currentBalance -> currentBalance - amount);
+        balance.getAndUpdate(currentBalance -> currentBalance - amount);
+        // accumulateAndGet 方法允许传入一个 BinaryOperator，它接收当前值和给定值，并返回更新后的值。
+        // balance.accumulateAndGet(amount, (currentBalance, x) -> currentBalance - x);
     }
 }
