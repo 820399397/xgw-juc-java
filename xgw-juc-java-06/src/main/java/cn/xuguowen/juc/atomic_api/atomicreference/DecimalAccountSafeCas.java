@@ -14,6 +14,8 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class DecimalAccountSafeCas implements DecimalAccount{
 
+    // BigDecimal是不可变的对象，所以说是线程安全的。既然是线程安全的，这里为何又使用AtomicReference来包装呢？
+    // 如何理解：不可变对象的单个操作是线程安全的，但是组合操作不一定是线程安全的，所以需要AtomicReference来保证多个操作之间的线程安全问题
     private AtomicReference<BigDecimal> balance;
 
     public DecimalAccountSafeCas(BigDecimal balance) {
