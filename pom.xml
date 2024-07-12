@@ -18,6 +18,7 @@
         <module>jcstress_ordering</module>
         <module>xgw-juc-java-06</module>
         <module>xgw-juc-java-07</module>
+        <module>xgw-juc-java-08</module>
     </modules>
 
     <parent>
