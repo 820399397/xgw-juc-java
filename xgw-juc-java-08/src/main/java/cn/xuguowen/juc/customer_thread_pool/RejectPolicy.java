@@ -1,4 +1,4 @@
-package cn.xuguo.wen.juc.customer_thread_pool;
+package cn.xuguowen.juc.customer_thread_pool;
 
 /**
  * ClassName: RejectPolicy
