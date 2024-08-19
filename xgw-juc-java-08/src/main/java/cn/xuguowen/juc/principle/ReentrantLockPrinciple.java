@@ -1,4 +1,4 @@
-package cn.xuguowen.juc;
+package cn.xuguowen.juc.principle;
 
 import java.util.concurrent.locks.ReentrantLock;
 
